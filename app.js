@@ -21,6 +21,12 @@ var adminUsers = '110900955968475136'
 bot.on('ready', function() {
     console.log(bot.username + " - (" + bot.id + ")");
 });
+bot.on('ready', function() {
+    bot.sendMessage({
+        to: "146248235499913216",
+        message: "I'm ready!"
+    });
+});
 // END OF INITIAL FUNCTIONS
 
 // USER COMMANDS
@@ -73,10 +79,31 @@ bot.on('message', function(user, userID, channelID, message, rawEvent) {
     if (message === "!help") {
         bot.sendMessage({
             to: channelID,
-            message: "```!admin | !twitch | !ping | !website | !newwebsite | !donate```"
+            message: "```!admin | !twitch | !ping | !website | !newwebsite | !donate | | !major```"
+        });
+    }
+});
+bot.on('message', function(user, userID, channelID, message, rawEvent) {
+    if (message === "!checkin") {
+        bot.sendMessage({
+            to: channelID,
+            message: ""
         });
     }
 });
 // END OF USER COMMANDS
 
 // ADMIN COMMANDS
+
+// END OF ADMIN COMMANDS
+
+// SPECIAL COMMANDS
+bot.on('message', function(user, userID, channelID, message, rawEvent) {
+    if (message === "!major") {
+        bot.sendMessage({
+            to: channelID,
+            message: "MLG Major Schedule can be seen here: http://www.majorleaguegaming.com/events/84/mlg-cs-go-major-championship--columbus"
+        });
+    }
+});
+// END OF SPECIAL COMMANDS

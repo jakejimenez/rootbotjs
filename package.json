@@ -5,5 +5,8 @@
   "author": "r00t1000",
   "dependencies": {
     "discord.io": "^1.8.3"
+  },
+  "scripts": {
+      "start": "node app.js"
   }
 }
