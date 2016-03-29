@@ -1,0 +1,9 @@
+{
+  "name": "rll-discord-bot",
+  "version": "0.1.0",
+  "description": "A Discord JS Bot",
+  "author": "r00t1000",
+  "dependencies": {
+    "discord.io": "^1.8.3"
+  }
+}
