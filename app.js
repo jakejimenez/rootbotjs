@@ -26,7 +26,7 @@ bot.on('ready', function() {
 });
 bot.on('ready', function() {
     bot.sendMessage({
-        to: "146503214047428608",
+        to: "110900955968475136",
         message: "I'm ready!"
     });
 });
@@ -67,7 +67,7 @@ bot.on('message', function(user, userID, channelID, message, rawEvent) {
     if (message === "!help") {
         bot.sendMessage({
             to: channelID,
-            message: "```!admin | !twitch | !ping | !website | !newwebsite | !donate | | !major```"
+            message: "```!admin \n!twitch \n!ping \n!website \n!newwebsite \n!donate \n!major```"
         });
     }
     if (message === "!checkin") {
@@ -80,6 +80,12 @@ bot.on('message', function(user, userID, channelID, message, rawEvent) {
         bot.sendMessage({
             to: channelID,
             message: userID
+        });
+    }
+    if (message === "bad bot") {
+        bot.sendMessage({
+            to: channelID,
+            message: "Shut up pleb!"
         });
     }
 });
