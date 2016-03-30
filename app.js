@@ -17,6 +17,7 @@ var bot = new DiscordClient({
 // VARIABLES
 var adminUsers = '110900955968475136'
 var altAdmin = '115268992507183109'
+var alttwoAdmin = '146266975658704896'
 // END OF VARIABLEs
 
 // INITIAL FUNCTIONS
@@ -25,14 +26,13 @@ bot.on('ready', function() {
 });
 bot.on('ready', function() {
     bot.sendMessage({
-        to: "146248235499913216",
+        to: "146503214047428608",
         message: "I'm ready!"
     });
 });
 // END OF INITIAL FUNCTIONS
 
 // USER COMMANDS
-// Tests responsiveness
 bot.on('message', function(user, userID, channelID, message, rawEvent) {
     if (message === "!ping") {
         bot.sendMessage({
@@ -40,60 +40,42 @@ bot.on('message', function(user, userID, channelID, message, rawEvent) {
             message: "pong"
         });
     }
-});
-// Displays twitch
-bot.on('message', function(user, userID, channelID, message, rawEvent) {
     if (message === "!twitch") {
         bot.sendMessage({
             to: channelID,
             message: "http://Twitch.tv/redditladderleague or http://Twitch.tv/redditladderleague2"
         });
     }
-});
-// Displays admin name
-bot.on('message', function(user, userID, channelID, message, rawEvent) {
     if (message === "!admin") {
         bot.sendMessage({
             to: channelID,
             message: "My admin is x6tent. Please contact him if i'm acting incompetent."
         });
     }
-});
-// Thank your neighborhood bot.
-bot.on('message', function(user, userID, channelID, message, rawEvent) {
     if (message === "good bot" && userID !== adminUsers) {
         bot.sendMessage({
             to: channelID,
             message: "Thank you pleb."
         });
     }
-});
-// Thank Mr. Admin
-bot.on('message', function(user, userID, channelID, message, rawEvent) {
     if (message === "good bot" && userID == adminUsers) {
         bot.sendMessage({
             to: channelID,
             message: "Thank you almighty ruler."
         });
     }
-});
-bot.on('message', function(user, userID, channelID, message, rawEvent) {
     if (message === "!help") {
         bot.sendMessage({
             to: channelID,
             message: "```!admin | !twitch | !ping | !website | !newwebsite | !donate | | !major```"
         });
     }
-});
-bot.on('message', function(user, userID, channelID, message, rawEvent) {
     if (message === "!checkin") {
         bot.sendMessage({
-            to: "146503214047428608",
+            to: "150808896515211264",
             message: "A user has checked in for a match. || User: " + user
         });
     }
-});
-bot.on('message', function(user, userID, channelID, message, rawEvent) {
     if (message === "!id") {
         bot.sendMessage({
             to: channelID,
