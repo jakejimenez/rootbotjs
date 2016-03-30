@@ -1,10 +1,11 @@
 var DiscordClient = require('discord.io');
 var cred = require("./cred.json");
+var admins = require("./admins.json");
 var fs = require("fs");
- console.log("\n *START* \n");
- var content = fs.readFileSync("./cred.json");
- console.log("Your Credentials : \n"+ content);
- console.log("\n *EXIT* \n");
+console.log("\n *START* \n");
+var content = fs.readFileSync("./cred.json");
+console.log("Your Credentials : \n" + content);
+console.log("\n *EXIT* \n");
 var bot = new DiscordClient({
     autorun: true,
     email: cred.email,
@@ -15,6 +16,7 @@ var bot = new DiscordClient({
 
 // VARIABLES
 var adminUsers = '110900955968475136'
+var altAdmin = '115268992507183109'
 // END OF VARIABLEs
 
 // INITIAL FUNCTIONS
@@ -86,15 +88,33 @@ bot.on('message', function(user, userID, channelID, message, rawEvent) {
 bot.on('message', function(user, userID, channelID, message, rawEvent) {
     if (message === "!checkin") {
         bot.sendMessage({
+            to: "146503214047428608",
+            message: "A user has checked in for a match. || User: " + user
+        });
+    }
+});
+bot.on('message', function(user, userID, channelID, message, rawEvent) {
+    if (message === "!id") {
+        bot.sendMessage({
             to: channelID,
-            message: ""
+            message: userID
         });
     }
 });
 // END OF USER COMMANDS
 
 // ADMIN COMMANDS
-
+bot.on('message', function(user, userID, channelID, message, rawEvent) {
+    if (message === "!disconnect" && userID == adminUsers) {
+        bot.disconnect()
+    }
+});
+/*bot.on('message', function(user, userID, channelID, message, rawEvent) {
+    var reg = /^\d+$/;
+    if (message === "!blacklist " + reg && admins.userID == true) {
+        fs.writeFileSync
+    }
+});*/
 // END OF ADMIN COMMANDS
 
 // SPECIAL COMMANDS
