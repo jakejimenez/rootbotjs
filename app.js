@@ -2,6 +2,11 @@ var DiscordClient = require('discord.io');
 var cred = require("./cred.json");
 var admins = require("./admins.json");
 var fs = require("fs");
+var Firebase = require("firebase");
+//var myFirebaseRef = new Firebase("YOUR FIREBASE URL");
+
+
+// Show that the bot is working and setup some initial stuff.
 console.log("\n *START* \n");
 var content = fs.readFileSync("./cred.json");
 console.log("Your Credentials : \n" + content);
@@ -14,11 +19,12 @@ var bot = new DiscordClient({
     token: ""
 });
 
-// VARIABLES
-var adminUsers = '110900955968475136'
-var altAdmin = '115268992507183109'
-var alttwoAdmin = '146266975658704896'
-// END OF VARIABLEs
+// USER SETUP VARIABLES
+var adminId = "YOUR DISCORD ID";
+var commandPrefix = "!";
+var twitchLink = "YOUR TWITCH LINK";
+var websiteLink = "YOUR WEBSITE LINK";
+var donateLink = "YOUR DONATE LINK";
 
 // INITIAL FUNCTIONS
 bot.on('ready', function() {
@@ -26,7 +32,7 @@ bot.on('ready', function() {
 });
 bot.on('ready', function() {
     bot.sendMessage({
-        to: "110900955968475136",
+        to: adminId,
         message: "I'm ready!"
     });
 });
@@ -34,58 +40,50 @@ bot.on('ready', function() {
 
 // USER COMMANDS
 bot.on('message', function(user, userID, channelID, message, rawEvent) {
-    if (message === "!ping") {
+    var steamInfoName = "";
+    if (message === commandPrefix + "ping") {
         bot.sendMessage({
             to: channelID,
             message: "pong"
         });
     }
-    if (message === "!twitch") {
+    if (message === commandPrefix + "twitch") {
         bot.sendMessage({
             to: channelID,
-            message: "http://Twitch.tv/redditladderleague or http://Twitch.tv/redditladderleague2"
+            message: twitchLink
         });
     }
-    if (message === "!admin") {
+    if (message === commandPrefix + "admin") {
         bot.sendMessage({
             to: channelID,
-            message: "My admin is x6tent. Please contact him if i'm acting incompetent."
+            message: "My admin is " + "<" + "@" + adminId + ">" + ". Please contact him if i'm acting incompetent."
         });
     }
-    if (message === "good bot" && userID !== adminUsers) {
+    if (message === commandPrefix + "help") {
         bot.sendMessage({
             to: channelID,
-            message: "Thank you pleb."
+            message: "```admin \ntwitch \nping \nwebsite \ndonate \nid \nchannelid \nsteaminfo {username}```"
         });
     }
-    if (message === "good bot" && userID == adminUsers) {
-        bot.sendMessage({
-            to: channelID,
-            message: "Thank you almighty ruler."
-        });
-    }
-    if (message === "!help") {
-        bot.sendMessage({
-            to: channelID,
-            message: "```!admin \n!twitch \n!ping \n!website \n!newwebsite \n!donate \n!major```"
-        });
-    }
-    if (message === "!checkin") {
-        bot.sendMessage({
-            to: "150808896515211264",
-            message: "A user has checked in for a match. || User: " + user
-        });
-    }
-    if (message === "!id") {
+
+    if (message === commandPrefix + "id") {
         bot.sendMessage({
             to: channelID,
             message: userID
         });
     }
-    if (message === "bad bot") {
+    if (message === commandPrefix + "channelid") {
         bot.sendMessage({
             to: channelID,
-            message: "Shut up pleb!"
+            message: channelID
+        });
+    }
+    if (message.includes(commandPrefix + 'steaminfo')) {
+    	var steamArray = message.split(' ');
+    	steamInfoName = steamArray[1];
+        bot.sendMessage({
+            to: channelID,
+            message: "http://steamid.co/player.php?input=" + steamInfoName
         });
     }
 });
@@ -93,21 +91,15 @@ bot.on('message', function(user, userID, channelID, message, rawEvent) {
 
 // ADMIN COMMANDS
 bot.on('message', function(user, userID, channelID, message, rawEvent) {
-    if (message === "!disconnect" && userID == adminUsers) {
-        bot.disconnect()
+    if (message === commandPrefix + "disconnect" && userID == adminId) {
+        bot.disconnect();
     }
 });
-/*bot.on('message', function(user, userID, channelID, message, rawEvent) {
-    var reg = /^\d+$/;
-    if (message === "!blacklist " + reg && admins.userID == true) {
-        fs.writeFileSync
-    }
-});*/
 // END OF ADMIN COMMANDS
 
 // SPECIAL COMMANDS
 bot.on('message', function(user, userID, channelID, message, rawEvent) {
-    if (message === "!major") {
+    if (message === commandPrefix + "major") {
         bot.sendMessage({
             to: channelID,
             message: "MLG Major Schedule can be seen here: http://www.majorleaguegaming.com/events/84/mlg-cs-go-major-championship--columbus"
