@@ -18,9 +18,12 @@ rootBot for Discord
 | Command       | Desc          | Admin |
 | ------------- |:-------------:| -----:|
 | ping         | Tests responsiveness of bot.|No|
-| twitch       | Returns twitch link|No|
-| admin | Returns admin name|No|
-| help | Returns all the commands |No|
+| twitch       | Returns twitch link.|No|
+| admin | Returns admin name.|No|
+| help | Returns all the commands.|No|
+| id | Returns your Discord ID. |No|
+| channelid | Returns channel ID.|No|
+| steaminfo {vanity username} | Returns link with info on that user.|No|
 
 
 
