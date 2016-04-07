@@ -1,7 +1,7 @@
 rootBot for Discord
 ======
-A Discord bot using Discord.io with Node.JS
-------
+**A Discord bot using Discord.io with Node.JS**
+
 
 
 ### Installation:
