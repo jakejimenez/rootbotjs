@@ -12,9 +12,10 @@ rootBot for Discord
 
 | Command       | Desc          | Admin |
 | ------------- |:-------------:| -----:|
-| !ping         | Tests responsiveness of bot.|$1600|
-| !twitch       | Returns twitch link|$12|
-| zebra stripes | Returns admin name|$1|
+| !ping         | Tests responsiveness of bot.|No|
+| !twitch       | Returns twitch link|No|
+| !admin | Returns admin name|No|
+| !help | Returns all the commands |No|
 
 
 
