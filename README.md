@@ -12,10 +12,10 @@ rootBot for Discord
 
 | Command       | Desc          | Admin |
 | ------------- |:-------------:| -----:|
-| !ping         | Tests responsiveness of bot.|No|
-| !twitch       | Returns twitch link|No|
-| !admin | Returns admin name|No|
-| !help | Returns all the commands |No|
+| ping         | Tests responsiveness of bot.|No|
+| twitch       | Returns twitch link|No|
+| admin | Returns admin name|No|
+| help | Returns all the commands |No|
 
 
 
