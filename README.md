@@ -4,9 +4,10 @@ rootBot for Discord
 
 
 ### Installation:
-1. npm install
-2. Create a cred.json file with two value's "email" and "password"
-3. Start bot with ```node app.js```
+1. Clone with repo into a directory of your choice.
+2. Cd to that directory and open a command window in the directory (Windows: Shift + RClick) and ```npm install```
+3. Create a cred.json file with two value's "email" and "password"
+4. Start bot with ```node app.js```
 
 ### Setup:
 1. Create a cred.json with two values, email with the value of the discord bot email and password with the value of the password for the discord bot.
