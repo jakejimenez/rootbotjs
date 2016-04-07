@@ -24,6 +24,8 @@ rootBot for Discord
 | id | Returns your Discord ID. |No|
 | channelid | Returns channel ID.|No|
 | steaminfo {vanity username} | Returns link with info on that user.|No|
+| website | Returns link to website provided in setup.|No|
+| donate | Returns donate link provided in setup.|No|
 
 
 
