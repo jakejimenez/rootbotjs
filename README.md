@@ -11,7 +11,7 @@ rootBot for Discord
 
 ### Setup:
 1. Create a cred.json with two values, email with the value of the discord bot email and password with the value of the password for the discord bot.
-2. Open up app.js and input your info in the ```USER SETUP VARIABLES``` section.
+2. Open up app.js and input your info in the ```USER SETUP VARIABLES``` section of app.js
 
 ### Commands:
 
