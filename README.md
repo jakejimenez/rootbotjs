@@ -2,6 +2,9 @@ rootBot for Discord
 ======
 **A Discord bot using Discord.io with Node.JS**
 
+[![forthebadge](http://forthebadge.com/images/badges/gluten-free.svg)](http://forthebadge.com)
+[![forthebadge](http://forthebadge.com/images/badges/uses-js.svg)](http://forthebadge.com)
+
 
 ### Installation:
 1. Clone with repo into a directory of your choice.
