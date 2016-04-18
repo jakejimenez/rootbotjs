@@ -20,7 +20,7 @@ var bot = new DiscordClient({
 });
 
 // USER SETUP VARIABLES
-var adminId = "YOUR DISCORD ID";
+var adminId = "110900955968475136";
 var commandPrefix = "!";
 var twitchLink = "YOUR TWITCH LINK";
 var websiteLink = "YOUR WEBSITE LINK";
@@ -93,6 +93,13 @@ bot.on('message', function(user, userID, channelID, message, rawEvent) {
 bot.on('message', function(user, userID, channelID, message, rawEvent) {
     if (message === commandPrefix + "disconnect" && userID == adminId) {
         bot.disconnect();
+    }
+    if (message.includes(commandPrefix + 'setgame')) {
+    	var gameStringArray = message.split(' ');
+    	bot.setPresence({
+    		//idle_since: Date.now(),
+    		game: gameStringArray[1]
+    	});
     }
 });
 // END OF ADMIN COMMANDS
