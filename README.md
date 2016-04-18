@@ -2,6 +2,9 @@ rootBot for Discord
 ======
 **A Discord bot using Discord.io with Node.JS**
 
+[![forthebadge](http://forthebadge.com/images/badges/gluten-free.svg)](http://forthebadge.com)
+[![forthebadge](http://forthebadge.com/images/badges/uses-js.svg)](http://forthebadge.com)
+
 
 ### Installation:
 1. Clone with repo into a directory of your choice.
@@ -11,9 +14,9 @@ rootBot for Discord
 
 ### Setup:
 1. Create a cred.json with two values, email with the value of the discord bot email and password with the value of the password for the discord bot.
-2. Open up app.js and input your info in the ```USER SETUP VARIABLES``` section.
+2. Open up app.js and input your info in the ```USER SETUP VARIABLES``` section of app.js
 
-### Commands:
+### User Commands:
 
 | Command       | Desc          | Admin |
 | ------------- |:-------------:| -----:|
@@ -26,6 +29,14 @@ rootBot for Discord
 | steaminfo {vanity username} | Returns link with info on that user.|No|
 | website | Returns link to website provided in setup.|No|
 | donate | Returns donate link provided in setup.|No|
+
+### Admin Commands:
+
+| Command       | Desc          | Admin |
+| ------------- |:-------------:| -----:|
+|setgame| Sets the game name or program for Discord. |Yes|
+
+
 
 
 
